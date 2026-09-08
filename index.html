@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catálogo de venda · Floripa</title>
+<meta name="description" content="Móveis, academia e eletrônicos da mudança de outubro. Retirada na Lagoa da Conceição até 30 de setembro.">
+
+<meta property="og:title" content="Catálogo de venda · Floripa">
+<meta property="og:description" content="Móveis, academia e eletrônicos. Retirada na Lagoa da Conceição até 30/09.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://carolbardi.github.io/catalogo-venda-floripa/">
+<meta property="og:image" content="https://carolbardi.github.io/catalogo-venda-floripa/fotos/cama-box-bau-casal-colchao-de-molas/01.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+:root {
+  --bg: #FFF8F1;
+  --ink: #2A2218;
+  --muted: #5C5044;
+  --accent: #C45C32;
+  --card: #F3E0D2;
+  --line: #E8D5C4;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+}
+a { color: var(--accent); text-decoration: none; }
+img { max-width: 100%; display: block; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 18px; }
+header.top {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(255,248,241,.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.top-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding: 12px 0;
+}
+.brand { font-size: 13px; letter-spacing: .14em; text-transform: uppercase;
+  font-weight: 700; color: var(--accent); }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--ink); color: #FFF8F1 !important;
+  padding: 10px 16px; border-radius: 999px; font-weight: 600; font-size: 14px;
+}
+.btn.wa { background: #128C7E; }
+.hero { padding: 36px 0 12px; }
+.kicker { letter-spacing: .14em; text-transform: uppercase; font-size: 12px;
+  color: var(--accent); font-weight: 700; margin: 0 0 10px; }
+h1 { font-size: clamp(28px, 6vw, 44px); line-height: 1.12; letter-spacing: -.02em;
+  margin: 0 0 14px; }
+.lead { color: var(--muted); max-width: 42em; margin: 0 0 22px; }
+.combo {
+  background: var(--card); border-radius: 18px; padding: 18px 20px;
+  display: grid; gap: 8px;
+}
+.combo-label { margin: 0; text-transform: uppercase; letter-spacing: .12em;
+  font-size: 11px; font-weight: 700; color: var(--accent); }
+.combo-price { margin: 0; font-size: 32px; font-weight: 700; letter-spacing: -.03em; }
+.combo-price span, .price span { font-size: 14px; font-weight: 500; color: var(--muted); }
+.combo-note { margin: 0; color: var(--muted); font-size: 14px; }
+.filters { display: flex; gap: 8px; overflow-x: auto; padding: 18px 0 8px;
+  margin: 0 -18px; padding-left: 18px; padding-right: 18px; }
+.filter {
+  border: 1px solid var(--line); background: #fff; color: var(--ink);
+  border-radius: 999px; padding: 8px 14px; font-size: 14px; white-space: nowrap;
+  cursor: pointer; font-family: inherit;
+}
+.filter.on { background: var(--ink); color: #FFF8F1; border-color: var(--ink); }
+.grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px; padding: 12px 0 40px;
+}
+.card {
+  background: #fff; border: 1px solid var(--line); border-radius: 16px;
+  overflow: hidden; display: flex; flex-direction: column; min-height: 100%;
+  color: inherit;
+}
+.card .thumb {
+  aspect-ratio: 4/3; background: var(--card); overflow: hidden;
+}
+.card .thumb img { width: 100%; height: 100%; object-fit: cover; }
+.card .body { padding: 12px 14px 16px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.cat { text-transform: uppercase; letter-spacing: .12em; font-size: 11px;
+  color: var(--accent); font-weight: 700; margin: 0; }
+.card h2, article.item h2 { font-size: 18px; line-height: 1.2; margin: 0; }
+.price { font-size: 20px; font-weight: 700; margin: 4px 0 0; }
+.price.empty { color: #A3907C; font-size: 16px; }
+.no-photo-thumb, .no-photo {
+  background: var(--card); color: var(--muted); display: flex; align-items: center;
+  justify-content: center; text-align: center; padding: 24px; font-size: 14px;
+}
+article.item {
+  background: #fff; border: 1px solid var(--line); border-radius: 18px;
+  padding: 18px; margin: 0 0 18px;
+}
+.shots { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0 14px; }
+.shots img {
+  width: 100%; height: 220px; object-fit: cover; border-radius: 12px;
+  background: var(--card); cursor: zoom-in;
+}
+.shots img.hero { grid-column: 1 / -1; height: 320px; object-fit: contain;
+  background: var(--card); }
+.desc { margin: 8px 0; color: var(--ink); }
+.meta { font-size: 14px; color: var(--muted); margin: 0 0 12px; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; }
+footer.site {
+  border-top: 1px solid var(--line); padding: 28px 0 90px; color: var(--muted);
+  font-size: 14px;
+}
+.fab {
+  position: fixed; right: 16px; bottom: 16px; z-index: 30;
+  box-shadow: 0 8px 24px rgba(42,34,24,.18);
+}
+#lightbox {
+  display: none; position: fixed; inset: 0; background: rgba(20,14,10,.92);
+  z-index: 40; align-items: center; justify-content: center; padding: 16px;
+}
+#lightbox.on { display: flex; }
+#lightbox img { max-width: min(96vw, 1100px); max-height: 92vh; object-fit: contain; }
+@media (max-width: 640px) {
+  .shots { grid-template-columns: 1fr; }
+  .shots img, .shots img.hero { height: 240px; }
+  .combo-price { font-size: 26px; }
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap top-inner">
+  <p class="brand">Catálogo · Floripa</p>
+  <a class="btn wa" href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20de%20venda%20e%20quero%20saber%20mais.">WhatsApp</a>
+</div></header>
+<main>
+<section class="hero wrap">
+  <p class="kicker">Mudança em outubro</p>
+  <h1>Família de mudança,<br>muitos itens a venda :)</h1>
+  <p class="lead">Móveis, academia e eletrônicos da casa atual, na Lagoa da Conceição.
+  Melhor para quem leva o conjunto — sai mais barato do que somar item a item
+  (R$ 16.000 se fosse um por um). Reserva com sinal no Pix.
+  Retirada até 30 de setembro.</p>
+  <div class="combo">
+    <p class="combo-label">Leva o que resta</p>
+    <p class="combo-price">R$ 13.000 <span>no Pix</span></p>
+    <p class="combo-note">Todos os itens desta página. Também vendemos avulso — preço em cada um.</p>
+    <p><a class="btn wa" href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20e%20tenho%20interesse%20no%20lote%20%28R%24%2013.000%29.">Quero o lote no WhatsApp</a></p>
+  </div>
+  <div class="filters"><button class="filter on" data-filter="" type="button">Todos</button><button class="filter" data-filter="QUARTOS" type="button">Quartos</button><button class="filter" data-filter="SALA" type="button">Sala</button><button class="filter" data-filter="COZINHA" type="button">Cozinha</button><button class="filter" data-filter="OUTROS" type="button">Outros</button><button class="filter" data-filter="ENTRETENIMENTO" type="button">Entretenimento</button></div>
+  <div class="grid">
+<a class="card" href="#cama-box-bau-casal-colchao-de-molas" data-cat="QUARTOS">
+  <div class="thumb"><img src="fotos/cama-box-bau-casal-colchao-de-molas/01.jpg" alt="Cama box baú casal + colchão de molas"></div>
+  <div class="body">
+    <p class="cat">Quartos</p>
+    <h2>Cama box baú casal</h2>
+    <p class="price">R$ 900 <span>no Pix</span></p>
+  </div>
+</a>
+
+<a class="card" href="#colchao-queen-pouco-uso-bege" data-cat="QUARTOS">
+  <div class="thumb"><img src="fotos/colchao-queen-pouco-uso-bege/01.jpg" alt="Colchão queen pouco uso bege"></div>
+  <div class="body">
+    <p class="cat">Quartos</p>
+    <h2>Colchão queen</h2>
+    <p class="price">R$ 500 <span>no Pix</span></p>
+  </div>
+</a>
+
+<a class="card" href="#gaveteiro-branco-e-madeira" data-cat="QUARTOS">
+  <div class="thumb"><img src="fotos/gaveteiro-branco-e-madeira/01.jpg" alt="Gaveteiro branco e madeira"></div>
+  <div class="body">
+    <p class="cat">Quartos</p>
+    <h2>Gaveteiro</h2>
+    <p class="price">R$ 300 <span>no Pix</span></p>
+  </div>
+</a>
+
+<a class="card" href="#sapateira-madeira-ripada" data-cat="SALA">
+  <div class="thumb"><img src="fotos/sapateira-madeira-ripada/01.jpg" alt="Sapateira madeira ripada"></div>
+  <div class="body">
+    <p class="cat">Sala</p>
+    <h2>Sapateira ripada</h2>
+    <p class="price">R$ 200 <span>no Pix</span></p>
+  </div>
+</a>
+
+<a class="card" href="#armario-tipo-buffet-branco-e-madeira-80cm-altura" data-cat="SALA">
+  <div class="thumb"><img src="fotos/armario-tipo-buffet-branco-e-madeira-80cm-altura/01.jpg" alt="Armário tipo buffet branco e madeira 80cm altura"></div>
+  <div class="body">
+    <p class="cat">Sala</p>
+    <h2>Buffet 80 cm</h2>
+    <p class="price">R$ 300 <span>no Pix</span></p>
+  </div>
+</a>
+
+<a class="card" href="#2-bancos-altos-madeira-couro-sintetico" data-cat="SALA">
+  <div class="thumb"><img src="fotos/2-bancos-altos-madeira-couro-sintetico/01.jpg" alt="2 bancos altos madeira + couro sintético"></div>
+  <div class="body">
+    <p class="cat">Sala</p>
+    <h2>2 bancos altos</h2>
+    <p class="price">R$ 400 <span>no Pix</span></p>
+  </div>
+</a>
+
+<a class="card" href="#rack-preto-usado" data-cat="SALA">
+  <div class="thumb"><img src="fotos/rack-preto-usado/01.jpg" alt="Rack preto usado"></div>
+  <div class="body">
+    <p class="cat">Sala</p>
+    <h2>Rack preto</h2>
+    <p class="price">R$ 100 <span>no Pix</span></p>
+  </div>
+</a>
+
+<a class="card" href="#fogao-2-fornos-electrolux" data-cat="COZINHA">
+  <div class="thumb"><img src="fotos/fogao-2-fornos-electrolux/01.jpg" alt="Fogão 2 fornos Electrolux"></div>
+  <div class="body">
+    <p class="cat">Cozinha</p>
+    <h2>Fogão Electrolux 2 fornos</h2>
+    <p class="price">R$ 500 <span>no Pix</span></p>
+  </div>
+</a>
+
+<a class="card" href="#loucas-e-utensilios-lote" data-cat="COZINHA">
+  <div class="thumb no-photo-thumb">Sem foto</div>
+  <div class="body">
+    <p class="cat">Cozinha</p>
+    <h2>Louças (lote)</h2>
+    <p class="price">R$ 100 <span>no Pix</span></p>
+  </div>
+</a>
+
+<a class="card" href="#mesa-de-madeira-pes-amarelos-e-tampo-madeira-4-l" data-cat="COZINHA">
+  <div class="thumb"><img src="fotos/mesa-de-madeira-pes-amarelos-e-tampo-madeira-4-l/01.jpg" alt="Mesa de madeira pés amarelos e tampo madeira 4 lugares Ideastore"></div>
+  <div class="body">
+    <p class="cat">Cozinha</p>
+    <h2>Mesa Ideastore 4 lugares</h2>
+    <p class="price">R$ 400 <span>no Pix</span></p>
+  </div>
+</a>
+
+<a class="card" href="#pia-com-misturador-monocomando" data-cat="COZINHA">
+  <div class="thumb"><img src="fotos/pia-com-misturador-monocomando/01.jpg" alt="Pia com misturador monocomando"></div>
+  <div class="body">
+    <p class="cat">Cozinha</p>
+    <h2>Pia monocomando</h2>
+    <p class="price">R$ 500 <span>no Pix</span></p>
+  </div>
+</a>
+
+<a class="card" href="#ventilador-1" data-cat="OUTROS">
+  <div class="thumb"><img src="fotos/ventilador-1/01.jpg" alt="Ventilador 1"></div>
+  <div class="body">
+    <p class="cat">Outros</p>
+    <h2>Ventilador 1</h2>
+    <p class="price">R$ 100 <span>no Pix</span></p>
+  </div>
+</a>
+
+<a class="card" href="#ventilador-2" data-cat="OUTROS">
+  <div class="thumb"><img src="fotos/ventilador-2/01.jpg" alt="Ventilador 2"></div>
+  <div class="body">
+    <p class="cat">Outros</p>
+    <h2>Ventilador 2</h2>
+    <p class="price">R$ 100 <span>no Pix</span></p>
+  </div>
+</a>
+
+<a class="card" href="#aquecedor-a-oleo" data-cat="OUTROS">
+  <div class="thumb no-photo-thumb">Sem foto</div>
+  <div class="body">
+    <p class="cat">Outros</p>
+    <h2>Aquecedor a óleo</h2>
+    <p class="price">R$ 450 <span>no Pix</span></p>
+  </div>
+</a>
+
+<a class="card" href="#estacao-de-exercicio-wct-semi-nova-comprada-em-m" data-cat="ENTRETENIMENTO">
+  <div class="thumb"><img src="fotos/estacao-de-exercicio-wct-semi-nova-comprada-em-m/01.jpg" alt="Estação de exercício WCT semi-nova comprada em março"></div>
+  <div class="body">
+    <p class="cat">Entretenimento</p>
+    <h2>Estação WCT</h2>
+    <p class="price">R$ 3.000 <span>no Pix</span></p>
+  </div>
+</a>
+
+<a class="card" href="#esteira-athletic-610t" data-cat="ENTRETENIMENTO">
+  <div class="thumb"><img src="fotos/esteira-athletic-610t/01.jpg" alt="Esteira Athletic 610T"></div>
+  <div class="body">
+    <p class="cat">Entretenimento</p>
+    <h2>Esteira Athletic 610T</h2>
+    <p class="price">R$ 3.100 <span>no Pix</span></p>
+  </div>
+</a>
+
+<a class="card" href="#amazon-echo-1a-geracao" data-cat="ENTRETENIMENTO">
+  <div class="thumb"><img src="fotos/amazon-echo-1a-geracao/01.jpg" alt="Amazon Echo 1a Geração"></div>
+  <div class="body">
+    <p class="cat">Entretenimento</p>
+    <h2>Amazon Echo 1ª geração</h2>
+    <p class="price empty">A combinar</p>
+  </div>
+</a>
+
+<a class="card" href="#amazon-tap" data-cat="ENTRETENIMENTO">
+  <div class="thumb"><img src="fotos/amazon-tap/01.jpg" alt="Amazon Tap"></div>
+  <div class="body">
+    <p class="cat">Entretenimento</p>
+    <h2>Amazon Tap</h2>
+    <p class="price empty">A combinar</p>
+  </div>
+</a>
+
+<a class="card" href="#esteira-evolux-caminhada-sem-eletricidade-analog" data-cat="ENTRETENIMENTO">
+  <div class="thumb no-photo-thumb">Sem foto</div>
+  <div class="body">
+    <p class="cat">Entretenimento</p>
+    <h2>Esteira Evolux (sem motor)</h2>
+    <p class="price">R$ 400 <span>no Pix</span></p>
+  </div>
+</a>
+
+<a class="card" href="#videogame-switch-combo-jogos-e-case" data-cat="ENTRETENIMENTO">
+  <div class="thumb"><img src="fotos/videogame-switch-combo-jogos-e-case/01.jpg" alt="Videogame Switch combo jogos e case"></div>
+  <div class="body">
+    <p class="cat">Entretenimento</p>
+    <h2>Nintendo Switch (combo)</h2>
+    <p class="price">R$ 2.400 <span>no Pix</span></p>
+  </div>
+</a>
+
+<a class="card" href="#som-lg-xboom-2350" data-cat="ENTRETENIMENTO">
+  <div class="thumb"><img src="fotos/som-lg-xboom-2350/01.jpg" alt="Som LG Xboom 2350"></div>
+  <div class="body">
+    <p class="cat">Entretenimento</p>
+    <h2>Som LG Xboom 2350 W</h2>
+    <p class="price">R$ 1.700 <span>no Pix</span></p>
+  </div>
+</a>
+
+<a class="card" href="#violao-estudante-18-ano-2014-di-giorgio" data-cat="ENTRETENIMENTO">
+  <div class="thumb"><img src="fotos/violao-estudante-18-ano-2014-di-giorgio/01.jpg" alt="Violão Estudante 18 ano 2014 Di Giorgio"></div>
+  <div class="body">
+    <p class="cat">Entretenimento</p>
+    <h2>Violão Di Giorgio 2014</h2>
+    <p class="price">R$ 550 <span>no Pix</span></p>
+  </div>
+</a>
+</div>
+</section>
+<section class="wrap" id="itens">
+  
+<article class="item" id="cama-box-bau-casal-colchao-de-molas" data-cat="QUARTOS">
+  <p class="cat">Quartos</p>
+  <h2>Cama box baú casal + colchão de molas</h2>
+  <p class="price">R$ 900 <span>no Pix</span></p>
+  <p class="desc">Cama box baú casal Gazin Maximus, tecido cinza, com colchão de molas ensacadas. O baú na base guarda roupa de cama. Referência de modelo no Mercado Livre (produto novo — não é o anúncio deste item).</p>
+  <p class="meta"><strong>Anúncio novo:</strong> <a href="https://www.mercadolivre.com.br/cama-box-bau-casal-gazin-maximus-molas-ensacadas-linho-cor-cinzabran/p/MLB37739672">Ver no Mercado Livre</a></p>
+  <div class="shots"><img class="hero" src="fotos/cama-box-bau-casal-colchao-de-molas/01.jpg" alt="Cama box baú casal + colchão de molas"><img class="" src="fotos/cama-box-bau-casal-colchao-de-molas/02.jpg" alt="Cama box baú casal + colchão de molas"><img class="" src="fotos/cama-box-bau-casal-colchao-de-molas/03.jpg" alt="Cama box baú casal + colchão de molas"><img class="" src="fotos/cama-box-bau-casal-colchao-de-molas/04.jpg" alt="Cama box baú casal + colchão de molas"></div>
+  <p class="actions"><a class="btn wa" href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20e%20tenho%20interesse%3A%20Cama%20box%20ba%C3%BA%20casal%20%2B%20colch%C3%A3o%20de%20molas">Quero este no WhatsApp</a></p>
+</article>
+
+<article class="item" id="colchao-queen-pouco-uso-bege" data-cat="QUARTOS">
+  <p class="cat">Quartos</p>
+  <h2>Colchão queen pouco uso bege</h2>
+  <p class="price">R$ 500 <span>no Pix</span></p>
+  <p class="desc">Colchão queen bege, pouco uso, com matelassê em losango e desenho floral. Vendido à parte da cama box casal.</p>
+  
+  <div class="shots"><img class="hero" src="fotos/colchao-queen-pouco-uso-bege/01.jpg" alt="Colchão queen pouco uso bege"><img class="" src="fotos/colchao-queen-pouco-uso-bege/02.jpg" alt="Colchão queen pouco uso bege"><img class="" src="fotos/colchao-queen-pouco-uso-bege/03.jpg" alt="Colchão queen pouco uso bege"><img class="" src="fotos/colchao-queen-pouco-uso-bege/04.jpg" alt="Colchão queen pouco uso bege"></div>
+  <p class="actions"><a class="btn wa" href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20e%20tenho%20interesse%3A%20Colch%C3%A3o%20queen%20pouco%20uso%20bege">Quero este no WhatsApp</a></p>
+</article>
+
+<article class="item" id="gaveteiro-branco-e-madeira" data-cat="QUARTOS">
+  <p class="cat">Quartos</p>
+  <h2>Gaveteiro branco e madeira</h2>
+  <p class="price">R$ 300 <span>no Pix</span></p>
+  <p class="desc">Gaveteiro com frente branca e estrutura em madeira, várias gavetas. Peça compacta para quarto.</p>
+  
+  <div class="shots"><img class="hero" src="fotos/gaveteiro-branco-e-madeira/01.jpg" alt="Gaveteiro branco e madeira"></div>
+  <p class="actions"><a class="btn wa" href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20e%20tenho%20interesse%3A%20Gaveteiro%20branco%20e%20madeira">Quero este no WhatsApp</a></p>
+</article>
+
+<article class="item" id="sapateira-madeira-ripada" data-cat="SALA">
+  <p class="cat">Sala</p>
+  <h2>Sapateira madeira ripada</h2>
+  <p class="price">R$ 200 <span>no Pix</span></p>
+  <p class="desc">Sapateira de madeira ripada, porta que abre inclinada. Cabe vários pares em pé sem ocupar muito chão.</p>
+  
+  <div class="shots"><img class="hero" src="fotos/sapateira-madeira-ripada/01.jpg" alt="Sapateira madeira ripada"><img class="" src="fotos/sapateira-madeira-ripada/02.jpg" alt="Sapateira madeira ripada"></div>
+  <p class="actions"><a class="btn wa" href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20e%20tenho%20interesse%3A%20Sapateira%20madeira%20ripada">Quero este no WhatsApp</a></p>
+</article>
+
+<article class="item" id="armario-tipo-buffet-branco-e-madeira-80cm-altura" data-cat="SALA">
+  <p class="cat">Sala</p>
+  <h2>Armário tipo buffet branco e madeira 80cm altura</h2>
+  <p class="price">R$ 300 <span>no Pix</span></p>
+  <p class="desc">Buffet baixo (~80 cm), três portas brancas e estrutura em madeira. Serve como aparador ou armário da sala.</p>
+  
+  <div class="shots"><img class="hero" src="fotos/armario-tipo-buffet-branco-e-madeira-80cm-altura/01.jpg" alt="Armário tipo buffet branco e madeira 80cm altura"><img class="" src="fotos/armario-tipo-buffet-branco-e-madeira-80cm-altura/02.jpg" alt="Armário tipo buffet branco e madeira 80cm altura"><img class="" src="fotos/armario-tipo-buffet-branco-e-madeira-80cm-altura/03.jpg" alt="Armário tipo buffet branco e madeira 80cm altura"><img class="" src="fotos/armario-tipo-buffet-branco-e-madeira-80cm-altura/04.jpg" alt="Armário tipo buffet branco e madeira 80cm altura"></div>
+  <p class="actions"><a class="btn wa" href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20e%20tenho%20interesse%3A%20Arm%C3%A1rio%20tipo%20buffet%20branco%20e%20madeira%2080cm%20altura">Quero este no WhatsApp</a></p>
+</article>
+
+<article class="item" id="2-bancos-altos-madeira-couro-sintetico" data-cat="SALA">
+  <p class="cat">Sala</p>
+  <h2>2 bancos altos madeira + couro sintético</h2>
+  <p class="price">R$ 400 <span>no Pix</span></p>
+  <p class="desc">Dois bancos altos de madeira curva + assento e encosto em couro sintético preto, giratórios, com regulagem de altura e apoio para os pés. Base com marcas de ferrugem. Vendidos juntos.</p>
+  
+  <div class="shots"><img class="hero" src="fotos/2-bancos-altos-madeira-couro-sintetico/01.jpg" alt="2 bancos altos madeira + couro sintético"><img class="" src="fotos/2-bancos-altos-madeira-couro-sintetico/02.jpg" alt="2 bancos altos madeira + couro sintético"></div>
+  <p class="actions"><a class="btn wa" href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20e%20tenho%20interesse%3A%202%20bancos%20altos%20madeira%20%2B%20couro%20sint%C3%A9tico">Quero este no WhatsApp</a></p>
+</article>
+
+<article class="item" id="rack-preto-usado" data-cat="SALA">
+  <p class="cat">Sala</p>
+  <h2>Rack preto usado</h2>
+  <p class="price">R$ 100 <span>no Pix</span></p>
+  <p class="desc">Rack preto com nichos. Marcas de uso, preço de saída. Bom para TV e aparelhos.</p>
+  
+  <div class="shots"><img class="hero" src="fotos/rack-preto-usado/01.jpg" alt="Rack preto usado"><img class="" src="fotos/rack-preto-usado/02.jpg" alt="Rack preto usado"><img class="" src="fotos/rack-preto-usado/03.jpg" alt="Rack preto usado"></div>
+  <p class="actions"><a class="btn wa" href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20e%20tenho%20interesse%3A%20Rack%20preto%20usado">Quero este no WhatsApp</a></p>
+</article>
+
+<article class="item" id="fogao-2-fornos-electrolux" data-cat="COZINHA">
+  <p class="cat">Cozinha</p>
+  <h2>Fogão 2 fornos Electrolux</h2>
+  <p class="price">R$ 500 <span>no Pix</span></p>
+  <p class="desc">Fogão Electrolux branco, cinco bocas e dois fornos. Foto da frente, do cooktop e das conexões (gás e energia) atrás.</p>
+  
+  <div class="shots"><img class="hero" src="fotos/fogao-2-fornos-electrolux/01.jpg" alt="Fogão 2 fornos Electrolux"><img class="" src="fotos/fogao-2-fornos-electrolux/02.jpg" alt="Fogão 2 fornos Electrolux"><img class="" src="fotos/fogao-2-fornos-electrolux/03.jpg" alt="Fogão 2 fornos Electrolux"><img class="" src="fotos/fogao-2-fornos-electrolux/04.jpg" alt="Fogão 2 fornos Electrolux"></div>
+  <p class="actions"><a class="btn wa" href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20e%20tenho%20interesse%3A%20Fog%C3%A3o%202%20fornos%20Electrolux">Quero este no WhatsApp</a></p>
+</article>
+
+<article class="item" id="loucas-e-utensilios-lote" data-cat="COZINHA">
+  <p class="cat">Cozinha</p>
+  <h2>Louças e utensílios (lote)</h2>
+  <p class="price">R$ 100 <span>no Pix</span></p>
+  <p class="desc">Lote de louças e utensílios de cozinha. Combinamos o que entra no pacote na hora da reserva.</p>
+  
+  <div class="no-photo">Sem foto nesta versão — peça no WhatsApp.</div>
+  <p class="actions"><a class="btn wa" href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20e%20tenho%20interesse%3A%20Lou%C3%A7as%20e%20utens%C3%ADlios%20%28lote%29">Quero este no WhatsApp</a></p>
+</article>
+
+<article class="item" id="mesa-de-madeira-pes-amarelos-e-tampo-madeira-4-l" data-cat="COZINHA">
+  <p class="cat">Cozinha</p>
+  <h2>Mesa de madeira pés amarelos e tampo madeira 4 lugares Ideastore</h2>
+  <p class="price">R$ 400 <span>no Pix</span></p>
+  <p class="desc">Mesa de jantar 4 lugares, pés amarelos e tampo de madeira. Uso de mesa de trabalho; tem marcas de uso na pintura. Modelo na linha Ideastore.</p>
+  <p class="meta"><strong>Anúncio novo:</strong> <a href="https://www.ideastore.com.br/produtos/0-5826/mesa+de+jantar+madeira+mimo+base+verniz+jatoba+e+tampo+laca+branco+110x80x76cm">Ver no Ideastore</a></p>
+  <div class="shots"><img class="hero" src="fotos/mesa-de-madeira-pes-amarelos-e-tampo-madeira-4-l/01.jpg" alt="Mesa de madeira pés amarelos e tampo madeira 4 lugares Ideastore"><img class="" src="fotos/mesa-de-madeira-pes-amarelos-e-tampo-madeira-4-l/02.jpg" alt="Mesa de madeira pés amarelos e tampo madeira 4 lugares Ideastore"><img class="" src="fotos/mesa-de-madeira-pes-amarelos-e-tampo-madeira-4-l/03.jpg" alt="Mesa de madeira pés amarelos e tampo madeira 4 lugares Ideastore"></div>
+  <p class="actions"><a class="btn wa" href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20e%20tenho%20interesse%3A%20Mesa%20de%20madeira%20p%C3%A9s%20amarelos%20e%20tampo%20madeira%204%20lugares%20Ideastore">Quero este no WhatsApp</a></p>
+</article>
+
+<article class="item" id="pia-com-misturador-monocomando" data-cat="COZINHA">
+  <p class="cat">Cozinha</p>
+  <h2>Pia com misturador monocomando</h2>
+  <p class="price">R$ 500 <span>no Pix</span></p>
+  <p class="desc">Pia preta com misturador monocomando.</p>
+  
+  <div class="shots"><img class="hero" src="fotos/pia-com-misturador-monocomando/01.jpg" alt="Pia com misturador monocomando"><img class="" src="fotos/pia-com-misturador-monocomando/02.jpg" alt="Pia com misturador monocomando"><img class="" src="fotos/pia-com-misturador-monocomando/03.jpg" alt="Pia com misturador monocomando"><img class="" src="fotos/pia-com-misturador-monocomando/04.jpg" alt="Pia com misturador monocomando"></div>
+  <p class="actions"><a class="btn wa" href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20e%20tenho%20interesse%3A%20Pia%20com%20misturador%20monocomando">Quero este no WhatsApp</a></p>
+</article>
+
+<article class="item" id="ventilador-1" data-cat="OUTROS">
+  <p class="cat">Outros</p>
+  <h2>Ventilador 1</h2>
+  <p class="price">R$ 100 <span>no Pix</span></p>
+  <p class="desc">Ventilador de mesa Britânia Ultra Silence Force. Há dois iguais à venda, cada um no seu preço.</p>
+  
+  <div class="shots"><img class="hero" src="fotos/ventilador-1/01.jpg" alt="Ventilador 1"><img class="" src="fotos/ventilador-1/02.jpg" alt="Ventilador 1"></div>
+  <p class="actions"><a class="btn wa" href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20e%20tenho%20interesse%3A%20Ventilador%201">Quero este no WhatsApp</a></p>
+</article>
+
+<article class="item" id="ventilador-2" data-cat="OUTROS">
+  <p class="cat">Outros</p>
+  <h2>Ventilador 2</h2>
+  <p class="price">R$ 100 <span>no Pix</span></p>
+  <p class="desc">Segundo ventilador de mesa Britânia Ultra Silence Force, o par do primeiro. Vendidos avulsos.</p>
+  
+  <div class="shots"><img class="hero" src="fotos/ventilador-2/01.jpg" alt="Ventilador 2"><img class="" src="fotos/ventilador-2/02.jpg" alt="Ventilador 2"></div>
+  <p class="actions"><a class="btn wa" href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20e%20tenho%20interesse%3A%20Ventilador%202">Quero este no WhatsApp</a></p>
+</article>
+
+<article class="item" id="aquecedor-a-oleo" data-cat="OUTROS">
+  <p class="cat">Outros</p>
+  <h2>Aquecedor a óleo</h2>
+  <p class="price">R$ 450 <span>no Pix</span></p>
+  <p class="desc">Aquecedor a óleo, para o inverno em Floripa.</p>
+  
+  <div class="no-photo">Sem foto nesta versão — peça no WhatsApp.</div>
+  <p class="actions"><a class="btn wa" href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20e%20tenho%20interesse%3A%20Aquecedor%20a%20%C3%B3leo">Quero este no WhatsApp</a></p>
+</article>
+
+<article class="item" id="estacao-de-exercicio-wct-semi-nova-comprada-em-m" data-cat="ENTRETENIMENTO">
+  <p class="cat">Entretenimento</p>
+  <h2>Estação de exercício WCT semi-nova comprada em março</h2>
+  <p class="price">R$ 3.000 <span>no Pix</span></p>
+  <p class="desc">Estação de musculação WCT, comprada em março, semi-nova: banco, voador, polia e suporte para barra. Anilhas e halteres da foto não entram, salvo combinado.</p>
+  <p class="meta"><strong>Anúncio novo:</strong> <a href="https://www.mercadolivre.com.br/supino-com-voador-estacao-de-musculacao-wct-cor-da-estrutura-cinza-cor-do-estofamento-cinza-e-marrom/p/MLB23758232">Ver no Mercado Livre</a></p>
+  <div class="shots"><img class="hero" src="fotos/estacao-de-exercicio-wct-semi-nova-comprada-em-m/01.jpg" alt="Estação de exercício WCT semi-nova comprada em março"></div>
+  <p class="actions"><a class="btn wa" href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20e%20tenho%20interesse%3A%20Esta%C3%A7%C3%A3o%20de%20exerc%C3%ADcio%20WCT%20semi-nova%20comprada%20em%20mar%C3%A7o">Quero este no WhatsApp</a></p>
+</article>
+
+<article class="item" id="esteira-athletic-610t" data-cat="ENTRETENIMENTO">
+  <p class="cat">Entretenimento</p>
+  <h2>Esteira Athletic 610T</h2>
+  <p class="price">R$ 3.100 <span>no Pix</span></p>
+  <p class="desc">Esteira elétrica Athletic Racer 610T, pouco uso, dobra para guardar. Fotos do anúncio OLX (console, máquina e ficha técnica).</p>
+  <p class="meta"><strong>Anúncio:</strong> <a href="https://sc.olx.com.br/florianopolis-e-regiao/esportes-e-lazer/academia-e-exercicios/vendo-esteira-athletic-racer-610t-perfeito-estado-1531744949">Ver na OLX</a></p>
+  <div class="shots"><img class="hero" src="fotos/esteira-athletic-610t/01.jpg" alt="Esteira Athletic 610T"><img class="" src="fotos/esteira-athletic-610t/02.jpg" alt="Esteira Athletic 610T"><img class="" src="fotos/esteira-athletic-610t/03.jpg" alt="Esteira Athletic 610T"><img class="" src="fotos/esteira-athletic-610t/04.jpg" alt="Esteira Athletic 610T"></div>
+  <p class="actions"><a class="btn wa" href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20e%20tenho%20interesse%3A%20Esteira%20Athletic%20610T">Quero este no WhatsApp</a></p>
+</article>
+
+<article class="item" id="amazon-echo-1a-geracao" data-cat="ENTRETENIMENTO">
+  <p class="cat">Entretenimento</p>
+  <h2>Amazon Echo 1a Geração</h2>
+  <p class="price empty">Preço a combinar</p>
+  <p class="desc">Amazon Echo de 1ª geração (Alexa), cilindro preto, com fonte. Preço a combinar no WhatsApp.</p>
+  
+  <div class="shots"><img class="hero" src="fotos/amazon-echo-1a-geracao/01.jpg" alt="Amazon Echo 1a Geração"><img class="" src="fotos/amazon-echo-1a-geracao/02.jpg" alt="Amazon Echo 1a Geração"></div>
+  <p class="actions"><a class="btn wa" href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20e%20tenho%20interesse%3A%20Amazon%20Echo%201a%20Gera%C3%A7%C3%A3o">Quero este no WhatsApp</a></p>
+</article>
+
+<article class="item" id="amazon-tap" data-cat="ENTRETENIMENTO">
+  <p class="cat">Entretenimento</p>
+  <h2>Amazon Tap</h2>
+  <p class="price empty">Preço a combinar</p>
+  <p class="desc">Amazon Tap (Alexa portátil, malha preta, bateria). Foto da frente, do topo e das entradas. Preço a combinar no WhatsApp.</p>
+  
+  <div class="shots"><img class="hero" src="fotos/amazon-tap/01.jpg" alt="Amazon Tap"><img class="" src="fotos/amazon-tap/02.jpg" alt="Amazon Tap"><img class="" src="fotos/amazon-tap/03.jpg" alt="Amazon Tap"></div>
+  <p class="actions"><a class="btn wa" href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20e%20tenho%20interesse%3A%20Amazon%20Tap">Quero este no WhatsApp</a></p>
+</article>
+
+<article class="item" id="esteira-evolux-caminhada-sem-eletricidade-analog" data-cat="ENTRETENIMENTO">
+  <p class="cat">Entretenimento</p>
+  <h2>Esteira Evolux caminhada sem eletricidade analogica</h2>
+  <p class="price">R$ 400 <span>no Pix</span></p>
+  <p class="desc">Esteira de caminhada mecânica Evolux, sem motor — anda no seu ritmo.</p>
+  <p class="meta"><strong>Anúncio novo:</strong> <a href="https://www.mercadolivre.com.br/esteira-mecanica-evolux-self-2026-para-treino-residencial/up/MLBU4302307305">Ver no Mercado Livre</a></p>
+  <div class="no-photo">Sem foto nesta versão — peça no WhatsApp.</div>
+  <p class="actions"><a class="btn wa" href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20e%20tenho%20interesse%3A%20Esteira%20Evolux%20caminhada%20sem%20eletricidade%20analogica">Quero este no WhatsApp</a></p>
+</article>
+
+<article class="item" id="videogame-switch-combo-jogos-e-case" data-cat="ENTRETENIMENTO">
+  <p class="cat">Entretenimento</p>
+  <h2>Videogame Switch combo jogos e case</h2>
+  <p class="price">R$ 2.400 <span>no Pix</span></p>
+  <p class="desc">Nintendo Switch OLED 128 GB com jogos, controle extra, case, capa e película. Fotos do anúncio OLX.</p>
+  <p class="meta"><strong>Anúncio:</strong> <a href="https://sc.olx.com.br/florianopolis-e-regiao/games/consoles-de-video-game/nintendo-switch-oled-128gb-jogos-controle-case-capa-e-pelicula-1531751480">Ver na OLX</a></p>
+  <div class="shots"><img class="hero" src="fotos/videogame-switch-combo-jogos-e-case/01.jpg" alt="Videogame Switch combo jogos e case"><img class="" src="fotos/videogame-switch-combo-jogos-e-case/02.jpg" alt="Videogame Switch combo jogos e case"><img class="" src="fotos/videogame-switch-combo-jogos-e-case/03.jpg" alt="Videogame Switch combo jogos e case"><img class="" src="fotos/videogame-switch-combo-jogos-e-case/04.jpg" alt="Videogame Switch combo jogos e case"></div>
+  <p class="actions"><a class="btn wa" href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20e%20tenho%20interesse%3A%20Videogame%20Switch%20combo%20jogos%20e%20case">Quero este no WhatsApp</a></p>
+</article>
+
+<article class="item" id="som-lg-xboom-2350" data-cat="ENTRETENIMENTO">
+  <p class="cat">Entretenimento</p>
+  <h2>Som LG Xboom 2350</h2>
+  <p class="price">R$ 1.700 <span>no Pix</span></p>
+  <p class="desc">Som LG Xboom CL87, 2350 W, pouco uso. Fotos do anúncio OLX.</p>
+  <p class="meta"><strong>Anúncio:</strong> <a href="https://sc.olx.com.br/florianopolis-e-regiao/audio/aparelhos-de-som/lg-xboom-cl87-2350w-meu-xodo--pouquissimo-uso-e-impecavel-1531754910">Ver na OLX</a></p>
+  <div class="shots"><img class="hero" src="fotos/som-lg-xboom-2350/01.jpg" alt="Som LG Xboom 2350"><img class="" src="fotos/som-lg-xboom-2350/02.jpg" alt="Som LG Xboom 2350"><img class="" src="fotos/som-lg-xboom-2350/03.jpg" alt="Som LG Xboom 2350"><img class="" src="fotos/som-lg-xboom-2350/04.jpg" alt="Som LG Xboom 2350"></div>
+  <p class="actions"><a class="btn wa" href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20e%20tenho%20interesse%3A%20Som%20LG%20Xboom%202350">Quero este no WhatsApp</a></p>
+</article>
+
+<article class="item" id="violao-estudante-18-ano-2014-di-giorgio" data-cat="ENTRETENIMENTO">
+  <p class="cat">Entretenimento</p>
+  <h2>Violão Estudante 18 ano 2014 Di Giorgio</h2>
+  <p class="price">R$ 550 <span>no Pix</span></p>
+  <p class="desc">Violão clássico Di Giorgio Estudante 18, ano 2014, com capa. Foto de corpo inteiro, cabeça e etiqueta do modelo.</p>
+  <p class="meta"><strong>Anúncio:</strong> <a href="https://sc.olx.com.br/florianopolis-e-regiao/instrumentos-musicais/violao-di-giorgio-estudante-18-2014-otimo-estado-capa-1531757328">Ver na OLX</a></p>
+  <div class="shots"><img class="hero" src="fotos/violao-estudante-18-ano-2014-di-giorgio/01.jpg" alt="Violão Estudante 18 ano 2014 Di Giorgio"><img class="" src="fotos/violao-estudante-18-ano-2014-di-giorgio/02.jpg" alt="Violão Estudante 18 ano 2014 Di Giorgio"><img class="" src="fotos/violao-estudante-18-ano-2014-di-giorgio/03.jpg" alt="Violão Estudante 18 ano 2014 Di Giorgio"></div>
+  <p class="actions"><a class="btn wa" href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20e%20tenho%20interesse%3A%20Viol%C3%A3o%20Estudante%2018%20ano%202014%20Di%20Giorgio">Quero este no WhatsApp</a></p>
+</article>
+
+</section>
+</main>
+<footer class="site"><div class="wrap">
+  <p>Retirada na Rua Laurindo Januário Silveira até 30.09. Reserva mediante pagamento de sinal.</p>
+  <p>WhatsApp: <a href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20de%20venda%20e%20quero%20saber%20mais.">+55 11 98465-6008</a></p>
+</div></footer>
+<a class="btn wa fab" href="https://wa.me/5511984656008?text=Oi%21%20Vi%20o%20cat%C3%A1logo%20de%20venda%20e%20quero%20saber%20mais.">WhatsApp</a>
+<div id="lightbox"><img alt=""></div>
+<script>
+const filters = document.querySelectorAll('.filter');
+const cards = document.querySelectorAll('[data-cat]');
+filters.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filters.forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    const cat = btn.dataset.filter;
+    cards.forEach(el => {
+      el.style.display = (!cat || el.dataset.cat === cat) ? '' : 'none';
+    });
+  });
+});
+const box = document.getElementById('lightbox');
+const boxImg = box.querySelector('img');
+document.querySelectorAll('.shots img').forEach(img => {
+  img.addEventListener('click', () => {
+    boxImg.src = img.src;
+    box.classList.add('on');
+  });
+});
+box.addEventListener('click', () => box.classList.remove('on'));
+</script>
+</body>
+</html>
